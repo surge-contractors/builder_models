@@ -3,6 +3,6 @@
 /// More dartdocs go here.
 library;
 
-export 'src/models_base.dart';
+export 'src/app_configuration_metadata.dart';
 
 // TODO: Export any libraries intended for clients of this package.
