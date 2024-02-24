@@ -233,13 +233,13 @@ class _$AppConfigurationImpl implements _AppConfiguration {
   const _$AppConfigurationImpl(
       {required this.metadata,
       required this.root,
-      required this.bottom,
-      required this.navigation,
-      required this.drawer,
-      required this.colorScheme,
-      required this.fontFamily,
-      required this.iconFamily,
-      required final List<ScreenshotConfiguration> screenshots})
+      this.bottom = BottomNavigationConfiguration.fallback,
+      this.navigation = NavigationConfiguration.fallback,
+      this.drawer = DrawerConfiguration.fallback,
+      this.colorScheme = ColorScheme.light,
+      this.fontFamily = 'Poppins',
+      this.iconFamily = IconFamily.fallback,
+      final List<ScreenshotConfiguration> screenshots = const []})
       : _screenshots = screenshots;
 
   factory _$AppConfigurationImpl.fromJson(Map<String, dynamic> json) =>
@@ -250,19 +250,26 @@ class _$AppConfigurationImpl implements _AppConfiguration {
   @override
   final NavigationNode root;
   @override
+  @JsonKey()
   final BottomNavigationConfiguration bottom;
   @override
+  @JsonKey()
   final NavigationConfiguration navigation;
   @override
+  @JsonKey()
   final DrawerConfiguration drawer;
   @override
+  @JsonKey()
   final ColorScheme colorScheme;
   @override
+  @JsonKey()
   final String fontFamily;
   @override
+  @JsonKey()
   final IconFamily iconFamily;
   final List<ScreenshotConfiguration> _screenshots;
   @override
+  @JsonKey()
   List<ScreenshotConfiguration> get screenshots {
     if (_screenshots is EqualUnmodifiableListView) return _screenshots;
     // ignore: implicit_dynamic_type
@@ -329,13 +336,13 @@ abstract class _AppConfiguration implements AppConfiguration {
   const factory _AppConfiguration(
           {required final AppConfigurationMetadata metadata,
           required final NavigationNode root,
-          required final BottomNavigationConfiguration bottom,
-          required final NavigationConfiguration navigation,
-          required final DrawerConfiguration drawer,
-          required final ColorScheme colorScheme,
-          required final String fontFamily,
-          required final IconFamily iconFamily,
-          required final List<ScreenshotConfiguration> screenshots}) =
+          final BottomNavigationConfiguration bottom,
+          final NavigationConfiguration navigation,
+          final DrawerConfiguration drawer,
+          final ColorScheme colorScheme,
+          final String fontFamily,
+          final IconFamily iconFamily,
+          final List<ScreenshotConfiguration> screenshots}) =
       _$AppConfigurationImpl;
 
   factory _AppConfiguration.fromJson(Map<String, dynamic> json) =

@@ -7,4 +7,6 @@ enum DrawerConfiguration {
 
   /// The label to display in the UI.
   final String label;
+
+  static const fallback = DrawerConfiguration.tilted;
 }

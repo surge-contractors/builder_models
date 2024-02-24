@@ -8,4 +8,6 @@ enum IconFamily {
   final String name;
 
   const IconFamily._(this.name);
+
+  static const fallback = IconFamily.material;
 }

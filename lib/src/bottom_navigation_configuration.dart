@@ -11,4 +11,7 @@ enum BottomNavigationConfiguration {
   const BottomNavigationConfiguration._(this.label);
 
   final String label;
+
+  static const BottomNavigationConfiguration fallback =
+      BottomNavigationConfiguration.worm;
 }

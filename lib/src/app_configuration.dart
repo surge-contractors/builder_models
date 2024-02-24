@@ -16,13 +16,15 @@ class AppConfiguration with _$AppConfiguration {
   const factory AppConfiguration({
     required AppConfigurationMetadata metadata,
     required NavigationNode root,
-    required BottomNavigationConfiguration bottom,
-    required NavigationConfiguration navigation,
-    required DrawerConfiguration drawer,
-    required ColorScheme colorScheme,
-    required String fontFamily,
-    required IconFamily iconFamily,
-    required List<ScreenshotConfiguration> screenshots,
+    @Default(BottomNavigationConfiguration.fallback)
+    BottomNavigationConfiguration bottom,
+    @Default(NavigationConfiguration.fallback)
+    NavigationConfiguration navigation,
+    @Default(DrawerConfiguration.fallback) DrawerConfiguration drawer,
+    @Default(ColorScheme.light) ColorScheme colorScheme,
+    @Default('Poppins') String fontFamily,
+    @Default(IconFamily.fallback) IconFamily iconFamily,
+    @Default([]) List<ScreenshotConfiguration> screenshots,
   }) = _AppConfiguration;
 
   factory AppConfiguration.fromJson(Map<String, dynamic> json) =>

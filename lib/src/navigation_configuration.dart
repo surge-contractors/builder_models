@@ -7,4 +7,7 @@ enum NavigationConfiguration {
   final String label;
 
   const NavigationConfiguration._(this.label);
+
+  static const NavigationConfiguration fallback =
+      NavigationConfiguration.bottom;
 }
