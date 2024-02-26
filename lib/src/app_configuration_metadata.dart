@@ -7,6 +7,7 @@ part 'app_configuration_metadata.g.dart';
 class AppConfigurationMetadata with _$AppConfigurationMetadata {
   const factory AppConfigurationMetadata({
     required String userId,
+    required String site,
   }) = _AppConfigurationMetadata;
 
   factory AppConfigurationMetadata.fromJson(Map<String, dynamic> json) =>

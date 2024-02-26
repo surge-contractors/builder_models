@@ -10,10 +10,12 @@ _$AppConfigurationMetadataImpl _$$AppConfigurationMetadataImplFromJson(
         Map<String, dynamic> json) =>
     _$AppConfigurationMetadataImpl(
       userId: json['userId'] as String,
+      site: json['site'] as String,
     );
 
 Map<String, dynamic> _$$AppConfigurationMetadataImplToJson(
         _$AppConfigurationMetadataImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
+      'site': instance.site,
     };

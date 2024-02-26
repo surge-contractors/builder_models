@@ -22,6 +22,7 @@ AppConfigurationMetadata _$AppConfigurationMetadataFromJson(
 /// @nodoc
 mixin _$AppConfigurationMetadata {
   String get userId => throw _privateConstructorUsedError;
+  String get site => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +36,7 @@ abstract class $AppConfigurationMetadataCopyWith<$Res> {
           $Res Function(AppConfigurationMetadata) then) =
       _$AppConfigurationMetadataCopyWithImpl<$Res, AppConfigurationMetadata>;
   @useResult
-  $Res call({String userId});
+  $Res call({String userId, String site});
 }
 
 /// @nodoc
@@ -53,11 +54,16 @@ class _$AppConfigurationMetadataCopyWithImpl<$Res,
   @override
   $Res call({
     Object? userId = null,
+    Object? site = null,
   }) {
     return _then(_value.copyWith(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      site: null == site
+          ? _value.site
+          : site // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -72,7 +78,7 @@ abstract class _$$AppConfigurationMetadataImplCopyWith<$Res>
       __$$AppConfigurationMetadataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String userId});
+  $Res call({String userId, String site});
 }
 
 /// @nodoc
@@ -89,11 +95,16 @@ class __$$AppConfigurationMetadataImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? userId = null,
+    Object? site = null,
   }) {
     return _then(_$AppConfigurationMetadataImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      site: null == site
+          ? _value.site
+          : site // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -102,17 +113,20 @@ class __$$AppConfigurationMetadataImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AppConfigurationMetadataImpl implements _AppConfigurationMetadata {
-  const _$AppConfigurationMetadataImpl({required this.userId});
+  const _$AppConfigurationMetadataImpl(
+      {required this.userId, required this.site});
 
   factory _$AppConfigurationMetadataImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppConfigurationMetadataImplFromJson(json);
 
   @override
   final String userId;
+  @override
+  final String site;
 
   @override
   String toString() {
-    return 'AppConfigurationMetadata(userId: $userId)';
+    return 'AppConfigurationMetadata(userId: $userId, site: $site)';
   }
 
   @override
@@ -120,12 +134,13 @@ class _$AppConfigurationMetadataImpl implements _AppConfigurationMetadata {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppConfigurationMetadataImpl &&
-            (identical(other.userId, userId) || other.userId == userId));
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.site, site) || other.site == site));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, userId);
+  int get hashCode => Object.hash(runtimeType, userId, site);
 
   @JsonKey(ignore: true)
   @override
@@ -143,14 +158,17 @@ class _$AppConfigurationMetadataImpl implements _AppConfigurationMetadata {
 }
 
 abstract class _AppConfigurationMetadata implements AppConfigurationMetadata {
-  const factory _AppConfigurationMetadata({required final String userId}) =
-      _$AppConfigurationMetadataImpl;
+  const factory _AppConfigurationMetadata(
+      {required final String userId,
+      required final String site}) = _$AppConfigurationMetadataImpl;
 
   factory _AppConfigurationMetadata.fromJson(Map<String, dynamic> json) =
       _$AppConfigurationMetadataImpl.fromJson;
 
   @override
   String get userId;
+  @override
+  String get site;
   @override
   @JsonKey(ignore: true)
   _$$AppConfigurationMetadataImplCopyWith<_$AppConfigurationMetadataImpl>
