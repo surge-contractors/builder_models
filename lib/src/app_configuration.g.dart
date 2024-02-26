@@ -12,41 +12,33 @@ _$AppConfigurationImpl _$$AppConfigurationImplFromJson(
       metadata: AppConfigurationMetadata.fromJson(
           json['metadata'] as Map<String, dynamic>),
       root: NavigationNode.fromJson(json['root'] as Map<String, dynamic>),
-      bottom: $enumDecodeNullable(
-              _$BottomNavigationConfigurationEnumMap, json['bottom']) ??
-          BottomNavigationConfiguration.fallback,
-      navigation: $enumDecodeNullable(
-              _$NavigationConfigurationEnumMap, json['navigation']) ??
-          NavigationConfiguration.fallback,
-      drawer:
-          $enumDecodeNullable(_$DrawerConfigurationEnumMap, json['drawer']) ??
-              DrawerConfiguration.fallback,
-      colorScheme: json['colorScheme'] == null
-          ? ColorScheme.light
-          : ColorScheme.fromJson(json['colorScheme'] as Map<String, dynamic>),
-      fontFamily: json['fontFamily'] as String? ?? 'Poppins',
-      iconFamily:
-          $enumDecodeNullable(_$IconFamilyEnumMap, json['iconFamily']) ??
-              IconFamily.fallback,
-      screenshots: (json['screenshots'] as List<dynamic>?)
-              ?.map((e) =>
-                  ScreenshotConfiguration.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
+      bottom:
+          $enumDecode(_$BottomNavigationConfigurationEnumMap, json['bottom']),
+      navigation:
+          $enumDecode(_$NavigationConfigurationEnumMap, json['navigation']),
+      drawer: $enumDecode(_$DrawerConfigurationEnumMap, json['drawer']),
+      colorScheme:
+          ColorScheme.fromJson(json['colorScheme'] as Map<String, dynamic>),
+      fontFamily: json['fontFamily'] as String,
+      iconFamily: $enumDecode(_$IconFamilyEnumMap, json['iconFamily']),
+      screenshots: (json['screenshots'] as List<dynamic>)
+          .map((e) =>
+              ScreenshotConfiguration.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$AppConfigurationImplToJson(
         _$AppConfigurationImpl instance) =>
     <String, dynamic>{
-      'metadata': instance.metadata.toJson(),
-      'root': instance.root.toJson(),
+      'metadata': instance.metadata,
+      'root': instance.root,
       'bottom': _$BottomNavigationConfigurationEnumMap[instance.bottom]!,
       'navigation': _$NavigationConfigurationEnumMap[instance.navigation]!,
       'drawer': _$DrawerConfigurationEnumMap[instance.drawer]!,
-      'colorScheme': instance.colorScheme.toJson(),
+      'colorScheme': instance.colorScheme,
       'fontFamily': instance.fontFamily,
       'iconFamily': _$IconFamilyEnumMap[instance.iconFamily]!,
-      'screenshots': instance.screenshots.map((e) => e.toJson()).toList(),
+      'screenshots': instance.screenshots,
     };
 
 const _$BottomNavigationConfigurationEnumMap = {

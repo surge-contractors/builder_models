@@ -12,20 +12,25 @@ part 'app_configuration.g.dart';
 /// they have the same values for all their properties.
 @freezed
 class AppConfiguration with _$AppConfiguration {
-  @JsonSerializable(explicitToJson: true)
+  const AppConfiguration._();
+
   const factory AppConfiguration({
     required AppConfigurationMetadata metadata,
     required NavigationNode root,
-    @Default(BottomNavigationConfiguration.fallback)
-    BottomNavigationConfiguration bottom,
-    @Default(NavigationConfiguration.fallback)
-    NavigationConfiguration navigation,
-    @Default(DrawerConfiguration.fallback) DrawerConfiguration drawer,
-    @Default(ColorScheme.light) ColorScheme colorScheme,
-    @Default('Poppins') String fontFamily,
-    @Default(IconFamily.fallback) IconFamily iconFamily,
-    @Default([]) List<ScreenshotConfiguration> screenshots,
+    required BottomNavigationConfiguration bottom,
+    required NavigationConfiguration navigation,
+    required DrawerConfiguration drawer,
+    required ColorScheme colorScheme,
+    required String fontFamily,
+    required IconFamily iconFamily,
+    required List<ScreenshotConfiguration> screenshots,
   }) = _AppConfiguration;
+
+  String get squareLogoUrl => 'https://logo.clearbit.com/${metadata.site}';
+
+  String get wideLogo =>
+      'https://logo-autofill-service-isjvj3xvvq-uw.a.run.app/'
+      '?url=${metadata.site}';
 
   factory AppConfiguration.fromJson(Map<String, dynamic> json) =>
       _$AppConfigurationFromJson(json);
