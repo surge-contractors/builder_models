@@ -1,3 +1,4 @@
+import 'package:builder_models/src/flutter/color_converter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'brightness.dart';
@@ -8,7 +9,12 @@ part 'color_scheme.g.dart';
 
 @freezed
 class ColorScheme with _$ColorScheme {
-  @JsonSerializable(explicitToJson: true)
+  @JsonSerializable(
+    explicitToJson: true,
+    converters: [
+      ColorConverter(),
+    ],
+  )
   const factory ColorScheme({
     required Brightness brightness,
     required Color primary,

@@ -328,7 +328,7 @@ class __$$TextStyleImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(explicitToJson: true, converters: [ColorConverter()])
 class _$TextStyleImpl implements _TextStyle {
   _$TextStyleImpl(
       {this.inherit,

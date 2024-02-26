@@ -31,7 +31,7 @@ _$ScreenshotConfigurationImpl _$$ScreenshotConfigurationImplFromJson(
               TextAlign.left,
       backgroundColor: json['backgroundColor'] == null
           ? Color.white
-          : Color.fromJson(json['backgroundColor'] as Map<String, dynamic>),
+          : const ColorConverter().fromJson(json['backgroundColor'] as String),
     );
 
 Map<String, dynamic> _$$ScreenshotConfigurationImplToJson(
@@ -46,7 +46,8 @@ Map<String, dynamic> _$$ScreenshotConfigurationImplToJson(
       'subtitle': instance.subtitle,
       'subtitleStyle': instance.subtitleStyle?.toJson(),
       'subtitleAlign': _$TextAlignEnumMap[instance.subtitleAlign]!,
-      'backgroundColor': instance.backgroundColor.toJson(),
+      'backgroundColor':
+          const ColorConverter().toJson(instance.backgroundColor),
     };
 
 const _$TextAlignEnumMap = {

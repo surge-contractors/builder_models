@@ -1,3 +1,4 @@
+import 'package:builder_models/src/flutter/color_converter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'color.dart';
@@ -9,7 +10,12 @@ part 'text_style.g.dart';
 
 @freezed
 class TextStyle with _$TextStyle {
-  @JsonSerializable(explicitToJson: true)
+  @JsonSerializable(
+    explicitToJson: true,
+    converters: [
+      ColorConverter(),
+    ],
+  )
   factory TextStyle({
     bool? inherit,
     Color? color,

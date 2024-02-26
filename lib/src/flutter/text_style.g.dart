@@ -9,12 +9,10 @@ part of 'text_style.dart';
 _$TextStyleImpl _$$TextStyleImplFromJson(Map<String, dynamic> json) =>
     _$TextStyleImpl(
       inherit: json['inherit'] as bool?,
-      color: json['color'] == null
-          ? null
-          : Color.fromJson(json['color'] as Map<String, dynamic>),
-      backgroundColor: json['backgroundColor'] == null
-          ? null
-          : Color.fromJson(json['backgroundColor'] as Map<String, dynamic>),
+      color: _$JsonConverterFromJson<String, Color>(
+          json['color'], const ColorConverter().fromJson),
+      backgroundColor: _$JsonConverterFromJson<String, Color>(
+          json['backgroundColor'], const ColorConverter().fromJson),
       fontSize: (json['fontSize'] as num?)?.toDouble(),
       fontWeight: json['fontWeight'] == null
           ? null
@@ -23,9 +21,8 @@ _$TextStyleImpl _$$TextStyleImplFromJson(Map<String, dynamic> json) =>
       letterSpacing: (json['letterSpacing'] as num?)?.toDouble(),
       wordSpacing: (json['wordSpacing'] as num?)?.toDouble(),
       height: (json['height'] as num?)?.toDouble(),
-      decorationColor: json['decorationColor'] == null
-          ? null
-          : Color.fromJson(json['decorationColor'] as Map<String, dynamic>),
+      decorationColor: _$JsonConverterFromJson<String, Color>(
+          json['decorationColor'], const ColorConverter().fromJson),
       fontFamily: json['fontFamily'] as String?,
       fontFamilyFallback: (json['fontFamilyFallback'] as List<dynamic>?)
           ?.map((e) => e as String)
@@ -37,22 +34,37 @@ _$TextStyleImpl _$$TextStyleImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$TextStyleImplToJson(_$TextStyleImpl instance) =>
     <String, dynamic>{
       'inherit': instance.inherit,
-      'color': instance.color?.toJson(),
-      'backgroundColor': instance.backgroundColor?.toJson(),
+      'color': _$JsonConverterToJson<String, Color>(
+          instance.color, const ColorConverter().toJson),
+      'backgroundColor': _$JsonConverterToJson<String, Color>(
+          instance.backgroundColor, const ColorConverter().toJson),
       'fontSize': instance.fontSize,
       'fontWeight': instance.fontWeight?.toJson(),
       'fontStyle': _$FontStyleEnumMap[instance.fontStyle],
       'letterSpacing': instance.letterSpacing,
       'wordSpacing': instance.wordSpacing,
       'height': instance.height,
-      'decorationColor': instance.decorationColor?.toJson(),
+      'decorationColor': _$JsonConverterToJson<String, Color>(
+          instance.decorationColor, const ColorConverter().toJson),
       'fontFamily': instance.fontFamily,
       'fontFamilyFallback': instance.fontFamilyFallback,
       'package': instance.package,
       'debugLabel': instance.debugLabel,
     };
 
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
 const _$FontStyleEnumMap = {
   FontStyle.normal: 'normal',
   FontStyle.italic: 'italic',
 };
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);

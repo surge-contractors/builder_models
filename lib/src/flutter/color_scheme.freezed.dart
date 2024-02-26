@@ -900,7 +900,7 @@ class __$$ColorSchemeImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(explicitToJson: true, converters: [ColorConverter()])
 class _$ColorSchemeImpl implements _ColorScheme {
   const _$ColorSchemeImpl(
       {required this.brightness,

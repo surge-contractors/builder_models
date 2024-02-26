@@ -285,7 +285,7 @@ class __$$ScreenshotConfigurationImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable(explicitToJson: true, converters: [ColorConverter()])
 class _$ScreenshotConfigurationImpl implements _ScreenshotConfiguration {
   _$ScreenshotConfigurationImpl(
       {this.id,

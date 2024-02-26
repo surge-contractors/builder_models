@@ -1,3 +1,4 @@
+import 'package:builder_models/src/flutter/color_converter.dart';
 import 'package:builder_models/src/ui_state.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -8,7 +9,12 @@ part 'screenshot_configuration.g.dart';
 
 @freezed
 class ScreenshotConfiguration with _$ScreenshotConfiguration {
-  @JsonSerializable(explicitToJson: true)
+  @JsonSerializable(
+    explicitToJson: true,
+    converters: [
+      ColorConverter(),
+    ],
+  )
   factory ScreenshotConfiguration({
     String? id,
     @Default(UiState()) UiState ui,

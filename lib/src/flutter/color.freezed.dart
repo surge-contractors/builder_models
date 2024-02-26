@@ -14,15 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-Color _$ColorFromJson(Map<String, dynamic> json) {
-  return _Color.fromJson(json);
-}
-
 /// @nodoc
 mixin _$Color {
   int get value => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ColorCopyWith<Color> get copyWith => throw _privateConstructorUsedError;
 }
@@ -92,12 +87,9 @@ class __$$ColorImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$ColorImpl implements _Color {
   const _$ColorImpl(this.value);
-
-  factory _$ColorImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ColorImplFromJson(json);
 
   @override
   final int value;
@@ -115,7 +107,6 @@ class _$ColorImpl implements _Color {
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, value);
 
@@ -124,19 +115,10 @@ class _$ColorImpl implements _Color {
   @pragma('vm:prefer-inline')
   _$$ColorImplCopyWith<_$ColorImpl> get copyWith =>
       __$$ColorImplCopyWithImpl<_$ColorImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ColorImplToJson(
-      this,
-    );
-  }
 }
 
 abstract class _Color implements Color {
   const factory _Color(final int value) = _$ColorImpl;
-
-  factory _Color.fromJson(Map<String, dynamic> json) = _$ColorImpl.fromJson;
 
   @override
   int get value;

@@ -9,116 +9,128 @@ part of 'color_scheme.dart';
 _$ColorSchemeImpl _$$ColorSchemeImplFromJson(Map<String, dynamic> json) =>
     _$ColorSchemeImpl(
       brightness: $enumDecode(_$BrightnessEnumMap, json['brightness']),
-      primary: Color.fromJson(json['primary'] as Map<String, dynamic>),
-      onPrimary: Color.fromJson(json['onPrimary'] as Map<String, dynamic>),
-      primaryContainer: json['primaryContainer'] == null
-          ? null
-          : Color.fromJson(json['primaryContainer'] as Map<String, dynamic>),
-      onPrimaryContainer: json['onPrimaryContainer'] == null
-          ? null
-          : Color.fromJson(json['onPrimaryContainer'] as Map<String, dynamic>),
-      secondary: Color.fromJson(json['secondary'] as Map<String, dynamic>),
-      onSecondary: Color.fromJson(json['onSecondary'] as Map<String, dynamic>),
-      secondaryContainer: json['secondaryContainer'] == null
-          ? null
-          : Color.fromJson(json['secondaryContainer'] as Map<String, dynamic>),
-      onSecondaryContainer: json['onSecondaryContainer'] == null
-          ? null
-          : Color.fromJson(
-              json['onSecondaryContainer'] as Map<String, dynamic>),
-      tertiary: json['tertiary'] == null
-          ? null
-          : Color.fromJson(json['tertiary'] as Map<String, dynamic>),
-      onTertiary: json['onTertiary'] == null
-          ? null
-          : Color.fromJson(json['onTertiary'] as Map<String, dynamic>),
-      tertiaryContainer: json['tertiaryContainer'] == null
-          ? null
-          : Color.fromJson(json['tertiaryContainer'] as Map<String, dynamic>),
-      onTertiaryContainer: json['onTertiaryContainer'] == null
-          ? null
-          : Color.fromJson(json['onTertiaryContainer'] as Map<String, dynamic>),
-      error: Color.fromJson(json['error'] as Map<String, dynamic>),
-      onError: Color.fromJson(json['onError'] as Map<String, dynamic>),
-      errorContainer: json['errorContainer'] == null
-          ? null
-          : Color.fromJson(json['errorContainer'] as Map<String, dynamic>),
-      onErrorContainer: json['onErrorContainer'] == null
-          ? null
-          : Color.fromJson(json['onErrorContainer'] as Map<String, dynamic>),
-      background: Color.fromJson(json['background'] as Map<String, dynamic>),
+      primary: const ColorConverter().fromJson(json['primary'] as String),
+      onPrimary: const ColorConverter().fromJson(json['onPrimary'] as String),
+      primaryContainer: _$JsonConverterFromJson<String, Color>(
+          json['primaryContainer'], const ColorConverter().fromJson),
+      onPrimaryContainer: _$JsonConverterFromJson<String, Color>(
+          json['onPrimaryContainer'], const ColorConverter().fromJson),
+      secondary: const ColorConverter().fromJson(json['secondary'] as String),
+      onSecondary:
+          const ColorConverter().fromJson(json['onSecondary'] as String),
+      secondaryContainer: _$JsonConverterFromJson<String, Color>(
+          json['secondaryContainer'], const ColorConverter().fromJson),
+      onSecondaryContainer: _$JsonConverterFromJson<String, Color>(
+          json['onSecondaryContainer'], const ColorConverter().fromJson),
+      tertiary: _$JsonConverterFromJson<String, Color>(
+          json['tertiary'], const ColorConverter().fromJson),
+      onTertiary: _$JsonConverterFromJson<String, Color>(
+          json['onTertiary'], const ColorConverter().fromJson),
+      tertiaryContainer: _$JsonConverterFromJson<String, Color>(
+          json['tertiaryContainer'], const ColorConverter().fromJson),
+      onTertiaryContainer: _$JsonConverterFromJson<String, Color>(
+          json['onTertiaryContainer'], const ColorConverter().fromJson),
+      error: const ColorConverter().fromJson(json['error'] as String),
+      onError: const ColorConverter().fromJson(json['onError'] as String),
+      errorContainer: _$JsonConverterFromJson<String, Color>(
+          json['errorContainer'], const ColorConverter().fromJson),
+      onErrorContainer: _$JsonConverterFromJson<String, Color>(
+          json['onErrorContainer'], const ColorConverter().fromJson),
+      background: const ColorConverter().fromJson(json['background'] as String),
       onBackground:
-          Color.fromJson(json['onBackground'] as Map<String, dynamic>),
-      surface: Color.fromJson(json['surface'] as Map<String, dynamic>),
-      onSurface: Color.fromJson(json['onSurface'] as Map<String, dynamic>),
-      surfaceVariant: json['surfaceVariant'] == null
-          ? null
-          : Color.fromJson(json['surfaceVariant'] as Map<String, dynamic>),
-      onSurfaceVariant: json['onSurfaceVariant'] == null
-          ? null
-          : Color.fromJson(json['onSurfaceVariant'] as Map<String, dynamic>),
-      outline: json['outline'] == null
-          ? null
-          : Color.fromJson(json['outline'] as Map<String, dynamic>),
-      outlineVariant: json['outlineVariant'] == null
-          ? null
-          : Color.fromJson(json['outlineVariant'] as Map<String, dynamic>),
-      shadow: json['shadow'] == null
-          ? null
-          : Color.fromJson(json['shadow'] as Map<String, dynamic>),
-      scrim: json['scrim'] == null
-          ? null
-          : Color.fromJson(json['scrim'] as Map<String, dynamic>),
-      inverseSurface: json['inverseSurface'] == null
-          ? null
-          : Color.fromJson(json['inverseSurface'] as Map<String, dynamic>),
-      onInverseSurface: json['onInverseSurface'] == null
-          ? null
-          : Color.fromJson(json['onInverseSurface'] as Map<String, dynamic>),
-      inversePrimary: json['inversePrimary'] == null
-          ? null
-          : Color.fromJson(json['inversePrimary'] as Map<String, dynamic>),
-      surfaceTint: json['surfaceTint'] == null
-          ? null
-          : Color.fromJson(json['surfaceTint'] as Map<String, dynamic>),
+          const ColorConverter().fromJson(json['onBackground'] as String),
+      surface: const ColorConverter().fromJson(json['surface'] as String),
+      onSurface: const ColorConverter().fromJson(json['onSurface'] as String),
+      surfaceVariant: _$JsonConverterFromJson<String, Color>(
+          json['surfaceVariant'], const ColorConverter().fromJson),
+      onSurfaceVariant: _$JsonConverterFromJson<String, Color>(
+          json['onSurfaceVariant'], const ColorConverter().fromJson),
+      outline: _$JsonConverterFromJson<String, Color>(
+          json['outline'], const ColorConverter().fromJson),
+      outlineVariant: _$JsonConverterFromJson<String, Color>(
+          json['outlineVariant'], const ColorConverter().fromJson),
+      shadow: _$JsonConverterFromJson<String, Color>(
+          json['shadow'], const ColorConverter().fromJson),
+      scrim: _$JsonConverterFromJson<String, Color>(
+          json['scrim'], const ColorConverter().fromJson),
+      inverseSurface: _$JsonConverterFromJson<String, Color>(
+          json['inverseSurface'], const ColorConverter().fromJson),
+      onInverseSurface: _$JsonConverterFromJson<String, Color>(
+          json['onInverseSurface'], const ColorConverter().fromJson),
+      inversePrimary: _$JsonConverterFromJson<String, Color>(
+          json['inversePrimary'], const ColorConverter().fromJson),
+      surfaceTint: _$JsonConverterFromJson<String, Color>(
+          json['surfaceTint'], const ColorConverter().fromJson),
     );
 
 Map<String, dynamic> _$$ColorSchemeImplToJson(_$ColorSchemeImpl instance) =>
     <String, dynamic>{
       'brightness': _$BrightnessEnumMap[instance.brightness]!,
-      'primary': instance.primary.toJson(),
-      'onPrimary': instance.onPrimary.toJson(),
-      'primaryContainer': instance.primaryContainer?.toJson(),
-      'onPrimaryContainer': instance.onPrimaryContainer?.toJson(),
-      'secondary': instance.secondary.toJson(),
-      'onSecondary': instance.onSecondary.toJson(),
-      'secondaryContainer': instance.secondaryContainer?.toJson(),
-      'onSecondaryContainer': instance.onSecondaryContainer?.toJson(),
-      'tertiary': instance.tertiary?.toJson(),
-      'onTertiary': instance.onTertiary?.toJson(),
-      'tertiaryContainer': instance.tertiaryContainer?.toJson(),
-      'onTertiaryContainer': instance.onTertiaryContainer?.toJson(),
-      'error': instance.error.toJson(),
-      'onError': instance.onError.toJson(),
-      'errorContainer': instance.errorContainer?.toJson(),
-      'onErrorContainer': instance.onErrorContainer?.toJson(),
-      'background': instance.background.toJson(),
-      'onBackground': instance.onBackground.toJson(),
-      'surface': instance.surface.toJson(),
-      'onSurface': instance.onSurface.toJson(),
-      'surfaceVariant': instance.surfaceVariant?.toJson(),
-      'onSurfaceVariant': instance.onSurfaceVariant?.toJson(),
-      'outline': instance.outline?.toJson(),
-      'outlineVariant': instance.outlineVariant?.toJson(),
-      'shadow': instance.shadow?.toJson(),
-      'scrim': instance.scrim?.toJson(),
-      'inverseSurface': instance.inverseSurface?.toJson(),
-      'onInverseSurface': instance.onInverseSurface?.toJson(),
-      'inversePrimary': instance.inversePrimary?.toJson(),
-      'surfaceTint': instance.surfaceTint?.toJson(),
+      'primary': const ColorConverter().toJson(instance.primary),
+      'onPrimary': const ColorConverter().toJson(instance.onPrimary),
+      'primaryContainer': _$JsonConverterToJson<String, Color>(
+          instance.primaryContainer, const ColorConverter().toJson),
+      'onPrimaryContainer': _$JsonConverterToJson<String, Color>(
+          instance.onPrimaryContainer, const ColorConverter().toJson),
+      'secondary': const ColorConverter().toJson(instance.secondary),
+      'onSecondary': const ColorConverter().toJson(instance.onSecondary),
+      'secondaryContainer': _$JsonConverterToJson<String, Color>(
+          instance.secondaryContainer, const ColorConverter().toJson),
+      'onSecondaryContainer': _$JsonConverterToJson<String, Color>(
+          instance.onSecondaryContainer, const ColorConverter().toJson),
+      'tertiary': _$JsonConverterToJson<String, Color>(
+          instance.tertiary, const ColorConverter().toJson),
+      'onTertiary': _$JsonConverterToJson<String, Color>(
+          instance.onTertiary, const ColorConverter().toJson),
+      'tertiaryContainer': _$JsonConverterToJson<String, Color>(
+          instance.tertiaryContainer, const ColorConverter().toJson),
+      'onTertiaryContainer': _$JsonConverterToJson<String, Color>(
+          instance.onTertiaryContainer, const ColorConverter().toJson),
+      'error': const ColorConverter().toJson(instance.error),
+      'onError': const ColorConverter().toJson(instance.onError),
+      'errorContainer': _$JsonConverterToJson<String, Color>(
+          instance.errorContainer, const ColorConverter().toJson),
+      'onErrorContainer': _$JsonConverterToJson<String, Color>(
+          instance.onErrorContainer, const ColorConverter().toJson),
+      'background': const ColorConverter().toJson(instance.background),
+      'onBackground': const ColorConverter().toJson(instance.onBackground),
+      'surface': const ColorConverter().toJson(instance.surface),
+      'onSurface': const ColorConverter().toJson(instance.onSurface),
+      'surfaceVariant': _$JsonConverterToJson<String, Color>(
+          instance.surfaceVariant, const ColorConverter().toJson),
+      'onSurfaceVariant': _$JsonConverterToJson<String, Color>(
+          instance.onSurfaceVariant, const ColorConverter().toJson),
+      'outline': _$JsonConverterToJson<String, Color>(
+          instance.outline, const ColorConverter().toJson),
+      'outlineVariant': _$JsonConverterToJson<String, Color>(
+          instance.outlineVariant, const ColorConverter().toJson),
+      'shadow': _$JsonConverterToJson<String, Color>(
+          instance.shadow, const ColorConverter().toJson),
+      'scrim': _$JsonConverterToJson<String, Color>(
+          instance.scrim, const ColorConverter().toJson),
+      'inverseSurface': _$JsonConverterToJson<String, Color>(
+          instance.inverseSurface, const ColorConverter().toJson),
+      'onInverseSurface': _$JsonConverterToJson<String, Color>(
+          instance.onInverseSurface, const ColorConverter().toJson),
+      'inversePrimary': _$JsonConverterToJson<String, Color>(
+          instance.inversePrimary, const ColorConverter().toJson),
+      'surfaceTint': _$JsonConverterToJson<String, Color>(
+          instance.surfaceTint, const ColorConverter().toJson),
     };
 
 const _$BrightnessEnumMap = {
   Brightness.dark: 'dark',
   Brightness.light: 'light',
 };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
