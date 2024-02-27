@@ -29,9 +29,9 @@ class AppConfiguration with _$AppConfiguration {
     @Default([]) List<ScreenshotConfiguration> screenshots,
   }) = _AppConfiguration;
 
-  String get squareLogoUrl => 'https://logo.clearbit.com/${metadata.site}';
+  String get wideLogo => 'https://logo.clearbit.com/${metadata.site}';
 
-  String get wideLogo =>
+  String get squareLogo =>
       'https://logo-autofill-service-isjvj3xvvq-uw.a.run.app/'
       '?url=${metadata.site}';
 
