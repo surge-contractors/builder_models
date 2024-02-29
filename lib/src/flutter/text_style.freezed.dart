@@ -330,7 +330,7 @@ class __$$TextStyleImplCopyWithImpl<$Res>
 
 @JsonSerializable(explicitToJson: true, converters: [ColorConverter()])
 class _$TextStyleImpl implements _TextStyle {
-  _$TextStyleImpl(
+  const _$TextStyleImpl(
       {this.inherit,
       this.color,
       this.backgroundColor,
@@ -458,7 +458,7 @@ class _$TextStyleImpl implements _TextStyle {
 }
 
 abstract class _TextStyle implements TextStyle {
-  factory _TextStyle(
+  const factory _TextStyle(
       {final bool? inherit,
       final Color? color,
       final Color? backgroundColor,

@@ -16,7 +16,7 @@ class TextStyle with _$TextStyle {
       ColorConverter(),
     ],
   )
-  factory TextStyle({
+  const factory TextStyle({
     bool? inherit,
     Color? color,
     Color? backgroundColor,
