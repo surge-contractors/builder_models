@@ -25,10 +25,10 @@ mixin _$ScreenshotConfiguration {
   UiState get ui => throw _privateConstructorUsedError;
   Alignment get deviceLocation => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  TextStyle? get titleStyle => throw _privateConstructorUsedError;
+  TextStyle get titleStyle => throw _privateConstructorUsedError;
   TextAlign get titleAlign => throw _privateConstructorUsedError;
   String get subtitle => throw _privateConstructorUsedError;
-  TextStyle? get subtitleStyle => throw _privateConstructorUsedError;
+  TextStyle get subtitleStyle => throw _privateConstructorUsedError;
   TextAlign get subtitleAlign => throw _privateConstructorUsedError;
   Color get backgroundColor => throw _privateConstructorUsedError;
 
@@ -49,17 +49,17 @@ abstract class $ScreenshotConfigurationCopyWith<$Res> {
       UiState ui,
       Alignment deviceLocation,
       String title,
-      TextStyle? titleStyle,
+      TextStyle titleStyle,
       TextAlign titleAlign,
       String subtitle,
-      TextStyle? subtitleStyle,
+      TextStyle subtitleStyle,
       TextAlign subtitleAlign,
       Color backgroundColor});
 
   $UiStateCopyWith<$Res> get ui;
   $AlignmentCopyWith<$Res> get deviceLocation;
-  $TextStyleCopyWith<$Res>? get titleStyle;
-  $TextStyleCopyWith<$Res>? get subtitleStyle;
+  $TextStyleCopyWith<$Res> get titleStyle;
+  $TextStyleCopyWith<$Res> get subtitleStyle;
   $ColorCopyWith<$Res> get backgroundColor;
 }
 
@@ -81,10 +81,10 @@ class _$ScreenshotConfigurationCopyWithImpl<$Res,
     Object? ui = null,
     Object? deviceLocation = null,
     Object? title = null,
-    Object? titleStyle = freezed,
+    Object? titleStyle = null,
     Object? titleAlign = null,
     Object? subtitle = null,
-    Object? subtitleStyle = freezed,
+    Object? subtitleStyle = null,
     Object? subtitleAlign = null,
     Object? backgroundColor = null,
   }) {
@@ -105,10 +105,10 @@ class _$ScreenshotConfigurationCopyWithImpl<$Res,
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      titleStyle: freezed == titleStyle
+      titleStyle: null == titleStyle
           ? _value.titleStyle
           : titleStyle // ignore: cast_nullable_to_non_nullable
-              as TextStyle?,
+              as TextStyle,
       titleAlign: null == titleAlign
           ? _value.titleAlign
           : titleAlign // ignore: cast_nullable_to_non_nullable
@@ -117,10 +117,10 @@ class _$ScreenshotConfigurationCopyWithImpl<$Res,
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as String,
-      subtitleStyle: freezed == subtitleStyle
+      subtitleStyle: null == subtitleStyle
           ? _value.subtitleStyle
           : subtitleStyle // ignore: cast_nullable_to_non_nullable
-              as TextStyle?,
+              as TextStyle,
       subtitleAlign: null == subtitleAlign
           ? _value.subtitleAlign
           : subtitleAlign // ignore: cast_nullable_to_non_nullable
@@ -150,24 +150,16 @@ class _$ScreenshotConfigurationCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $TextStyleCopyWith<$Res>? get titleStyle {
-    if (_value.titleStyle == null) {
-      return null;
-    }
-
-    return $TextStyleCopyWith<$Res>(_value.titleStyle!, (value) {
+  $TextStyleCopyWith<$Res> get titleStyle {
+    return $TextStyleCopyWith<$Res>(_value.titleStyle, (value) {
       return _then(_value.copyWith(titleStyle: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $TextStyleCopyWith<$Res>? get subtitleStyle {
-    if (_value.subtitleStyle == null) {
-      return null;
-    }
-
-    return $TextStyleCopyWith<$Res>(_value.subtitleStyle!, (value) {
+  $TextStyleCopyWith<$Res> get subtitleStyle {
+    return $TextStyleCopyWith<$Res>(_value.subtitleStyle, (value) {
       return _then(_value.copyWith(subtitleStyle: value) as $Val);
     });
   }
@@ -195,10 +187,10 @@ abstract class _$$ScreenshotConfigurationImplCopyWith<$Res>
       UiState ui,
       Alignment deviceLocation,
       String title,
-      TextStyle? titleStyle,
+      TextStyle titleStyle,
       TextAlign titleAlign,
       String subtitle,
-      TextStyle? subtitleStyle,
+      TextStyle subtitleStyle,
       TextAlign subtitleAlign,
       Color backgroundColor});
 
@@ -207,9 +199,9 @@ abstract class _$$ScreenshotConfigurationImplCopyWith<$Res>
   @override
   $AlignmentCopyWith<$Res> get deviceLocation;
   @override
-  $TextStyleCopyWith<$Res>? get titleStyle;
+  $TextStyleCopyWith<$Res> get titleStyle;
   @override
-  $TextStyleCopyWith<$Res>? get subtitleStyle;
+  $TextStyleCopyWith<$Res> get subtitleStyle;
   @override
   $ColorCopyWith<$Res> get backgroundColor;
 }
@@ -231,10 +223,10 @@ class __$$ScreenshotConfigurationImplCopyWithImpl<$Res>
     Object? ui = null,
     Object? deviceLocation = null,
     Object? title = null,
-    Object? titleStyle = freezed,
+    Object? titleStyle = null,
     Object? titleAlign = null,
     Object? subtitle = null,
-    Object? subtitleStyle = freezed,
+    Object? subtitleStyle = null,
     Object? subtitleAlign = null,
     Object? backgroundColor = null,
   }) {
@@ -255,10 +247,10 @@ class __$$ScreenshotConfigurationImplCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      titleStyle: freezed == titleStyle
+      titleStyle: null == titleStyle
           ? _value.titleStyle
           : titleStyle // ignore: cast_nullable_to_non_nullable
-              as TextStyle?,
+              as TextStyle,
       titleAlign: null == titleAlign
           ? _value.titleAlign
           : titleAlign // ignore: cast_nullable_to_non_nullable
@@ -267,10 +259,10 @@ class __$$ScreenshotConfigurationImplCopyWithImpl<$Res>
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as String,
-      subtitleStyle: freezed == subtitleStyle
+      subtitleStyle: null == subtitleStyle
           ? _value.subtitleStyle
           : subtitleStyle // ignore: cast_nullable_to_non_nullable
-              as TextStyle?,
+              as TextStyle,
       subtitleAlign: null == subtitleAlign
           ? _value.subtitleAlign
           : subtitleAlign // ignore: cast_nullable_to_non_nullable
@@ -292,10 +284,12 @@ class _$ScreenshotConfigurationImpl implements _ScreenshotConfiguration {
       this.ui = const UiState(),
       this.deviceLocation = Alignment.bottomCenter,
       this.title = '',
-      this.titleStyle,
+      this.titleStyle =
+          const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
       this.titleAlign = TextAlign.left,
       this.subtitle = '',
-      this.subtitleStyle,
+      this.subtitleStyle =
+          const TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
       this.subtitleAlign = TextAlign.left,
       this.backgroundColor = Color.white});
 
@@ -314,7 +308,8 @@ class _$ScreenshotConfigurationImpl implements _ScreenshotConfiguration {
   @JsonKey()
   final String title;
   @override
-  final TextStyle? titleStyle;
+  @JsonKey()
+  final TextStyle titleStyle;
   @override
   @JsonKey()
   final TextAlign titleAlign;
@@ -322,7 +317,8 @@ class _$ScreenshotConfigurationImpl implements _ScreenshotConfiguration {
   @JsonKey()
   final String subtitle;
   @override
-  final TextStyle? subtitleStyle;
+  @JsonKey()
+  final TextStyle subtitleStyle;
   @override
   @JsonKey()
   final TextAlign subtitleAlign;
@@ -395,10 +391,10 @@ abstract class _ScreenshotConfiguration implements ScreenshotConfiguration {
       final UiState ui,
       final Alignment deviceLocation,
       final String title,
-      final TextStyle? titleStyle,
+      final TextStyle titleStyle,
       final TextAlign titleAlign,
       final String subtitle,
-      final TextStyle? subtitleStyle,
+      final TextStyle subtitleStyle,
       final TextAlign subtitleAlign,
       final Color backgroundColor}) = _$ScreenshotConfigurationImpl;
 
@@ -414,13 +410,13 @@ abstract class _ScreenshotConfiguration implements ScreenshotConfiguration {
   @override
   String get title;
   @override
-  TextStyle? get titleStyle;
+  TextStyle get titleStyle;
   @override
   TextAlign get titleAlign;
   @override
   String get subtitle;
   @override
-  TextStyle? get subtitleStyle;
+  TextStyle get subtitleStyle;
   @override
   TextAlign get subtitleAlign;
   @override

@@ -18,13 +18,13 @@ _$ScreenshotConfigurationImpl _$$ScreenshotConfigurationImplFromJson(
           : Alignment.fromJson(json['deviceLocation'] as Map<String, dynamic>),
       title: json['title'] as String? ?? '',
       titleStyle: json['titleStyle'] == null
-          ? null
+          ? const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)
           : TextStyle.fromJson(json['titleStyle'] as Map<String, dynamic>),
       titleAlign: $enumDecodeNullable(_$TextAlignEnumMap, json['titleAlign']) ??
           TextAlign.left,
       subtitle: json['subtitle'] as String? ?? '',
       subtitleStyle: json['subtitleStyle'] == null
-          ? null
+          ? const TextStyle(fontSize: 16, fontWeight: FontWeight.normal)
           : TextStyle.fromJson(json['subtitleStyle'] as Map<String, dynamic>),
       subtitleAlign:
           $enumDecodeNullable(_$TextAlignEnumMap, json['subtitleAlign']) ??
@@ -41,10 +41,10 @@ Map<String, dynamic> _$$ScreenshotConfigurationImplToJson(
       'ui': instance.ui.toJson(),
       'deviceLocation': instance.deviceLocation.toJson(),
       'title': instance.title,
-      'titleStyle': instance.titleStyle?.toJson(),
+      'titleStyle': instance.titleStyle.toJson(),
       'titleAlign': _$TextAlignEnumMap[instance.titleAlign]!,
       'subtitle': instance.subtitle,
-      'subtitleStyle': instance.subtitleStyle?.toJson(),
+      'subtitleStyle': instance.subtitleStyle.toJson(),
       'subtitleAlign': _$TextAlignEnumMap[instance.subtitleAlign]!,
       'backgroundColor':
           const ColorConverter().toJson(instance.backgroundColor),

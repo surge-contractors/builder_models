@@ -1,5 +1,4 @@
 import 'package:builder_models/builder_models.dart';
-import 'package:builder_models/src/navigation_index.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'flutter/flutter.dart';
