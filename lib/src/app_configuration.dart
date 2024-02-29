@@ -27,75 +27,7 @@ class AppConfiguration with _$AppConfiguration {
     @Default(ColorScheme.light) ColorScheme colorScheme,
     @Default('Poppins') String fontFamily,
     @Default(IconFamily.fallback) IconFamily iconFamily,
-    @Default([
-      // Screenshot that shows the homescreen of the app.
-      ScreenshotConfiguration(
-        deviceLocation: Alignment.centerLeft,
-        titleAlign: TextAlign.left,
-        subtitleAlign: TextAlign.left,
-        ui: UiState(
-          // TODO(a-wallen): This should be a constant enum value.
-          currentBottomNavigationIndex: 0,
-          isDrawerOpen: false,
-        ),
-      ),
-
-      /// Screenshot that shows the drawer open
-      ScreenshotConfiguration(
-        deviceLocation: Alignment.bottomCenter,
-        titleAlign: TextAlign.center,
-        subtitleAlign: TextAlign.center,
-        ui: UiState(
-          currentBottomNavigationIndex: 0,
-          isDrawerOpen: true,
-        ),
-      ),
-
-      /// Screenshot that shows the search functionality
-      ScreenshotConfiguration(
-        deviceLocation: Alignment.topCenter,
-        titleAlign: TextAlign.center,
-        subtitleAlign: TextAlign.center,
-        ui: UiState(
-          currentBottomNavigationIndex: 1,
-          isDrawerOpen: false,
-        ),
-      ),
-
-      /// Screenshot that shows the shopping cart
-      ScreenshotConfiguration(
-        deviceLocation: Alignment.bottomCenter,
-        titleAlign: TextAlign.center,
-        subtitleAlign: TextAlign.center,
-        ui: UiState(
-          currentBottomNavigationIndex: 2,
-          isDrawerOpen: false,
-        ),
-      ),
-
-      /// Screenshot that shows a list of products
-      ScreenshotConfiguration(
-        deviceLocation: Alignment.topCenter,
-        titleAlign: TextAlign.center,
-        subtitleAlign: TextAlign.center,
-        ui: UiState(
-          currentBottomNavigationIndex: 0,
-          isDrawerOpen: false,
-        ),
-      ),
-
-      /// screenshot that shows a product detail page
-      ScreenshotConfiguration(
-        deviceLocation: Alignment.centerRight,
-        titleAlign: TextAlign.right,
-        subtitleAlign: TextAlign.right,
-        ui: UiState(
-          currentBottomNavigationIndex: 0,
-          isDrawerOpen: false,
-        ),
-      ),
-    ])
-    List<ScreenshotConfiguration> screenshots,
+    @Default([]) List<ScreenshotConfiguration> screenshots,
   }) = _AppConfiguration;
 
   String get wideLogo => 'https://logo.clearbit.com/${metadata.site}';

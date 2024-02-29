@@ -239,38 +239,7 @@ class _$AppConfigurationImpl extends _AppConfiguration {
       this.colorScheme = ColorScheme.light,
       this.fontFamily = 'Poppins',
       this.iconFamily = IconFamily.fallback,
-      final List<ScreenshotConfiguration> screenshots = const [
-        ScreenshotConfiguration(
-            deviceLocation: Alignment.centerLeft,
-            titleAlign: TextAlign.left,
-            subtitleAlign: TextAlign.left,
-            ui: UiState(currentBottomNavigationIndex: 0, isDrawerOpen: false)),
-        ScreenshotConfiguration(
-            deviceLocation: Alignment.bottomCenter,
-            titleAlign: TextAlign.center,
-            subtitleAlign: TextAlign.center,
-            ui: UiState(currentBottomNavigationIndex: 0, isDrawerOpen: true)),
-        ScreenshotConfiguration(
-            deviceLocation: Alignment.topCenter,
-            titleAlign: TextAlign.center,
-            subtitleAlign: TextAlign.center,
-            ui: UiState(currentBottomNavigationIndex: 1, isDrawerOpen: false)),
-        ScreenshotConfiguration(
-            deviceLocation: Alignment.bottomCenter,
-            titleAlign: TextAlign.center,
-            subtitleAlign: TextAlign.center,
-            ui: UiState(currentBottomNavigationIndex: 2, isDrawerOpen: false)),
-        ScreenshotConfiguration(
-            deviceLocation: Alignment.topCenter,
-            titleAlign: TextAlign.center,
-            subtitleAlign: TextAlign.center,
-            ui: UiState(currentBottomNavigationIndex: 0, isDrawerOpen: false)),
-        ScreenshotConfiguration(
-            deviceLocation: Alignment.centerRight,
-            titleAlign: TextAlign.right,
-            subtitleAlign: TextAlign.right,
-            ui: UiState(currentBottomNavigationIndex: 0, isDrawerOpen: false))
-      ]})
+      final List<ScreenshotConfiguration> screenshots = const []})
       : _screenshots = screenshots,
         super._();
 
