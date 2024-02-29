@@ -32,7 +32,44 @@ _$AppConfigurationImpl _$$AppConfigurationImplFromJson(
               ?.map((e) =>
                   ScreenshotConfiguration.fromJson(e as Map<String, dynamic>))
               .toList() ??
-          const [],
+          const [
+            ScreenshotConfiguration(
+                deviceLocation: Alignment.centerLeft,
+                titleAlign: TextAlign.left,
+                subtitleAlign: TextAlign.left,
+                ui: UiState(
+                    currentBottomNavigationIndex: 0, isDrawerOpen: false)),
+            ScreenshotConfiguration(
+                deviceLocation: Alignment.bottomCenter,
+                titleAlign: TextAlign.center,
+                subtitleAlign: TextAlign.center,
+                ui: UiState(
+                    currentBottomNavigationIndex: 0, isDrawerOpen: true)),
+            ScreenshotConfiguration(
+                deviceLocation: Alignment.topCenter,
+                titleAlign: TextAlign.center,
+                subtitleAlign: TextAlign.center,
+                ui: UiState(
+                    currentBottomNavigationIndex: 1, isDrawerOpen: false)),
+            ScreenshotConfiguration(
+                deviceLocation: Alignment.bottomCenter,
+                titleAlign: TextAlign.center,
+                subtitleAlign: TextAlign.center,
+                ui: UiState(
+                    currentBottomNavigationIndex: 2, isDrawerOpen: false)),
+            ScreenshotConfiguration(
+                deviceLocation: Alignment.topCenter,
+                titleAlign: TextAlign.center,
+                subtitleAlign: TextAlign.center,
+                ui: UiState(
+                    currentBottomNavigationIndex: 0, isDrawerOpen: false)),
+            ScreenshotConfiguration(
+                deviceLocation: Alignment.centerRight,
+                titleAlign: TextAlign.right,
+                subtitleAlign: TextAlign.right,
+                ui: UiState(
+                    currentBottomNavigationIndex: 0, isDrawerOpen: false))
+          ],
     );
 
 Map<String, dynamic> _$$AppConfigurationImplToJson(
