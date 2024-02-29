@@ -287,7 +287,7 @@ class __$$ScreenshotConfigurationImplCopyWithImpl<$Res>
 
 @JsonSerializable(explicitToJson: true, converters: [ColorConverter()])
 class _$ScreenshotConfigurationImpl implements _ScreenshotConfiguration {
-  _$ScreenshotConfigurationImpl(
+  const _$ScreenshotConfigurationImpl(
       {this.id,
       this.ui = const UiState(),
       this.deviceLocation = Alignment.bottomCenter,
@@ -390,7 +390,7 @@ class _$ScreenshotConfigurationImpl implements _ScreenshotConfiguration {
 }
 
 abstract class _ScreenshotConfiguration implements ScreenshotConfiguration {
-  factory _ScreenshotConfiguration(
+  const factory _ScreenshotConfiguration(
       {final String? id,
       final UiState ui,
       final Alignment deviceLocation,

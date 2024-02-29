@@ -15,15 +15,23 @@ class ScreenshotConfiguration with _$ScreenshotConfiguration {
       ColorConverter(),
     ],
   )
-  factory ScreenshotConfiguration({
+  const factory ScreenshotConfiguration({
     String? id,
     @Default(UiState()) UiState ui,
     @Default(Alignment.bottomCenter) Alignment deviceLocation,
     @Default('') String title,
-    TextStyle? titleStyle,
+    @Default(TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.bold,
+    ))
+    TextStyle titleStyle,
     @Default(TextAlign.left) TextAlign titleAlign,
     @Default('') String subtitle,
-    TextStyle? subtitleStyle,
+    @Default(TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.normal,
+    ))
+    TextStyle subtitleStyle,
     @Default(TextAlign.left) TextAlign subtitleAlign,
     @Default(Color.white) Color backgroundColor,
   }) = _ScreenshotConfiguration;
