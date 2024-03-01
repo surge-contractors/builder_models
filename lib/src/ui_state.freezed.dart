@@ -121,7 +121,8 @@ class __$$UiStateImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$UiStateImpl implements _UiState {
   const _$UiStateImpl(
       {this.isDrawerOpen = false,

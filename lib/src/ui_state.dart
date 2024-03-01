@@ -7,6 +7,7 @@ part 'ui_state.g.dart';
 /// App state for screenshots.
 @freezed
 class UiState with _$UiState {
+  @JsonSerializable(explicitToJson: true)
   const factory UiState({
     @Default(false) bool isDrawerOpen,
     @Default(0) int currentBottomNavigationIndex,

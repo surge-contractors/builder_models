@@ -21,5 +21,5 @@ Map<String, dynamic> _$$UiStateImplToJson(_$UiStateImpl instance) =>
     <String, dynamic>{
       'isDrawerOpen': instance.isDrawerOpen,
       'currentBottomNavigationIndex': instance.currentBottomNavigationIndex,
-      'currentNavigation': instance.currentNavigation,
+      'currentNavigation': instance.currentNavigation?.toJson(),
     };
