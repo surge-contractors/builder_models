@@ -112,9 +112,10 @@ class __$$AppConfigurationMetadataImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AppConfigurationMetadataImpl implements _AppConfigurationMetadata {
+class _$AppConfigurationMetadataImpl extends _AppConfigurationMetadata {
   const _$AppConfigurationMetadataImpl(
-      {required this.userId, required this.site});
+      {required this.userId, required this.site})
+      : super._();
 
   factory _$AppConfigurationMetadataImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppConfigurationMetadataImplFromJson(json);
@@ -157,10 +158,11 @@ class _$AppConfigurationMetadataImpl implements _AppConfigurationMetadata {
   }
 }
 
-abstract class _AppConfigurationMetadata implements AppConfigurationMetadata {
+abstract class _AppConfigurationMetadata extends AppConfigurationMetadata {
   const factory _AppConfigurationMetadata(
       {required final String userId,
       required final String site}) = _$AppConfigurationMetadataImpl;
+  const _AppConfigurationMetadata._() : super._();
 
   factory _AppConfigurationMetadata.fromJson(Map<String, dynamic> json) =
       _$AppConfigurationMetadataImpl.fromJson;
