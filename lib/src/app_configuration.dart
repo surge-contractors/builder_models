@@ -29,10 +29,12 @@ class AppConfiguration with _$AppConfiguration {
     @Default([]) List<ScreenshotConfiguration> screenshots,
   }) = _AppConfiguration;
 
-  String get wideLogo => 'https://logo.clearbit.com/${metadata.site}';
+  String get wideLogo =>
+      'https://logo-autofill-service-isjvj3xvvq-uw.a.run.app/full'
+      '?url=${metadata.site}';
 
   String get squareLogo =>
-      'https://logo-autofill-service-isjvj3xvvq-uw.a.run.app/'
+      'https://logo-autofill-service-isjvj3xvvq-uw.a.run.app/square'
       '?url=${metadata.site}';
 
   factory AppConfiguration.fromJson(Map<String, dynamic> json) =>
