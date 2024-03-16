@@ -21,6 +21,7 @@ AppConfigurationMetadata _$AppConfigurationMetadataFromJson(
 
 /// @nodoc
 mixin _$AppConfigurationMetadata {
+  AppTemplateType get template => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
   String get site => throw _privateConstructorUsedError;
 
@@ -36,7 +37,7 @@ abstract class $AppConfigurationMetadataCopyWith<$Res> {
           $Res Function(AppConfigurationMetadata) then) =
       _$AppConfigurationMetadataCopyWithImpl<$Res, AppConfigurationMetadata>;
   @useResult
-  $Res call({String userId, String site});
+  $Res call({AppTemplateType template, String userId, String site});
 }
 
 /// @nodoc
@@ -53,10 +54,15 @@ class _$AppConfigurationMetadataCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? template = null,
     Object? userId = null,
     Object? site = null,
   }) {
     return _then(_value.copyWith(
+      template: null == template
+          ? _value.template
+          : template // ignore: cast_nullable_to_non_nullable
+              as AppTemplateType,
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -78,7 +84,7 @@ abstract class _$$AppConfigurationMetadataImplCopyWith<$Res>
       __$$AppConfigurationMetadataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String userId, String site});
+  $Res call({AppTemplateType template, String userId, String site});
 }
 
 /// @nodoc
@@ -94,10 +100,15 @@ class __$$AppConfigurationMetadataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? template = null,
     Object? userId = null,
     Object? site = null,
   }) {
     return _then(_$AppConfigurationMetadataImpl(
+      template: null == template
+          ? _value.template
+          : template // ignore: cast_nullable_to_non_nullable
+              as AppTemplateType,
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -114,12 +125,14 @@ class __$$AppConfigurationMetadataImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppConfigurationMetadataImpl extends _AppConfigurationMetadata {
   const _$AppConfigurationMetadataImpl(
-      {required this.userId, required this.site})
+      {required this.template, required this.userId, required this.site})
       : super._();
 
   factory _$AppConfigurationMetadataImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppConfigurationMetadataImplFromJson(json);
 
+  @override
+  final AppTemplateType template;
   @override
   final String userId;
   @override
@@ -127,7 +140,7 @@ class _$AppConfigurationMetadataImpl extends _AppConfigurationMetadata {
 
   @override
   String toString() {
-    return 'AppConfigurationMetadata(userId: $userId, site: $site)';
+    return 'AppConfigurationMetadata(template: $template, userId: $userId, site: $site)';
   }
 
   @override
@@ -135,13 +148,15 @@ class _$AppConfigurationMetadataImpl extends _AppConfigurationMetadata {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppConfigurationMetadataImpl &&
+            (identical(other.template, template) ||
+                other.template == template) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.site, site) || other.site == site));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, userId, site);
+  int get hashCode => Object.hash(runtimeType, template, userId, site);
 
   @JsonKey(ignore: true)
   @override
@@ -160,13 +175,16 @@ class _$AppConfigurationMetadataImpl extends _AppConfigurationMetadata {
 
 abstract class _AppConfigurationMetadata extends AppConfigurationMetadata {
   const factory _AppConfigurationMetadata(
-      {required final String userId,
+      {required final AppTemplateType template,
+      required final String userId,
       required final String site}) = _$AppConfigurationMetadataImpl;
   const _AppConfigurationMetadata._() : super._();
 
   factory _AppConfigurationMetadata.fromJson(Map<String, dynamic> json) =
       _$AppConfigurationMetadataImpl.fromJson;
 
+  @override
+  AppTemplateType get template;
   @override
   String get userId;
   @override
