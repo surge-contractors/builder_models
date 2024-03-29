@@ -3,6 +3,7 @@ library;
 export 'src/ui_state.dart';
 export 'src/app_configuration_metadata.dart';
 export 'src/app_configuration.dart';
+export 'src/app_template_type.dart';
 export 'src/bottom_navigation_configuration.dart';
 export 'src/drawer_configuration.dart';
 export 'src/icon_family.dart';
